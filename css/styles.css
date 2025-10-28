@@ -540,8 +540,134 @@ input:focus {
     color: #ff1493;
     transform: translateX(5px);
 }
+/* Cuadro principal */
+#contacto {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  margin: 40px auto;
+  width: 90%;
+  overflow: hidden;
+  height: 45px;
+}
 
+/* Contenedor interno en dos columnas */
+.contacto-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* 👈 ahora alinea arriba */
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
+/* Columna izquierda */
+.contacto-info {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
+/* Columna derecha */
+#metodos-pago {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  border-left: 2px solid #eee;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 👈 alinea arriba */
+}
 
+/* Títulos */
+#contacto h2, #metodos-pago h3 {
+  color: #ff5ca1;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  text-align: center;
+}
 
+/* Redes sociales organizadas en cuadrícula */
+#redes-sociales {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 👈 2 columnas */
+  gap: 8px;
+  margin-top: 15px;
+  width: 100%;
+  align-self: center;
+  transform: scale(1.0);
+  
+}
+
+/* Botones */
+.contacto-icono {
+  text-decoration: none;
+  color: #fdecec;
+  font-weight: bold;
+  background-color: #ff78b8;
+  border-radius: 25px;
+  padding: 6px 12px;
+  text-align: center;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  font-size: 0.9em;
+}
+
+.contacto-icono:hover {
+  background-color: #ff94c9;
+  color: #fff;
+}
+
+/* Métodos de pago */
+.logos-pago {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.pago-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pago-item img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 3px;
+  transition: transform 0.3s ease;
+}
+
+.pago-item img:hover {
+  transform: scale(1.08);
+}
+
+.pago-item p {
+  font-weight: bold;
+  color: #444;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+/* Responsive (móvil) */
+@media (max-width: 700px) {
+  .contacto-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #metodos-pago {
+    border-left: none;
+    border-top: 2px solid #eee;
+    padding-left: 0;
+    padding-top: 15px;
+  }
+
+  #redes-sociales {
+    grid-template-columns: 1fr; /* 👈 1 por fila en móvil */
+  }
+}
